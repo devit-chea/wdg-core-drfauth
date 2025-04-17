@@ -1,4 +1,4 @@
 include README.md
-recursive-include my_django_package/static *
-recursive-include my_django_package/templates *
+recursive-include wdg-drfauth-core/static *
+recursive-include wdg-drfauth-core/templates *
 
