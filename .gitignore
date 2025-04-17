@@ -1,0 +1,73 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django specific
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Packaging
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+*.manifest
+*.spec
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# PyInstaller
+*.manifest
+*.spec
+
+# macOS / Linux
+.DS_Store
+*.sublime-workspace
+*.sublime-project
+
+# Others
+*.sqlite3
+*.bak
+*.tmp
+*.orig
+
+# Optional: ignore migrations (if app is truly reusable)
+*/migrations/
+!*/migrations/__init__.py
