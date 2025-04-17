@@ -1,0 +1,4 @@
+include README.md
+recursive-include my_django_package/static *
+recursive-include my_django_package/templates *
+

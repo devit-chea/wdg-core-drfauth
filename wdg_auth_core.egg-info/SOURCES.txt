@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+setup.py
+wdg-drfauth-core/__init__.py
+wdg-drfauth-core/admin.py
+wdg-drfauth-core/apps.py
+wdg-drfauth-core/models.py
+wdg-drfauth-core/tests.py
+wdg-drfauth-core/views.py
+wdg-drfauth-core/migrations/__init__.py
+wdg_auth_core.egg-info/PKG-INFO
+wdg_auth_core.egg-info/SOURCES.txt
+wdg_auth_core.egg-info/dependency_links.txt
+wdg_auth_core.egg-info/requires.txt
+wdg_auth_core.egg-info/top_level.txt
