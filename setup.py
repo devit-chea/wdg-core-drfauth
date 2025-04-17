@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='wdg-auth-core',
+    name='wdg-core-auth',
     version='0.1.0',
     packages=find_packages(),
     include_package_data=True,
     license='MIT',
-    description='A reusable Django app for XYZ',
+    description='A reusable Django app for permission check for each view',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     install_requires=[
