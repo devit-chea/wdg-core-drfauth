@@ -24,8 +24,7 @@ wdg-core-auth
 
 ## 🔧 Setup
 
-### 1. Add your JWT public key in Django settings:
-
+### 1. Add your JWT public key in Django settings
 
 ```python
 # settings.py
@@ -37,7 +36,6 @@ JWT_VERIFYING_KEY = """
 ```
 
 ### 2. Implement your own FetchPermissionSelector
-
 
 ```python
 # my_project/permissions/selectors.py
@@ -57,7 +55,7 @@ class FetchPermissionSelector:
 
 ```
 
-### 3. Set up permission constants (optional override):
+### 3. Set up permission constants (optional override)
 
 ```python
 class PermissionOption:
@@ -65,7 +63,6 @@ class PermissionOption:
     APPROVAL_REQUIRED = "approval_required"
     DENIED = "denied"
 ```
-
 
 # ✅ Usage
 
@@ -91,11 +88,10 @@ from permission_decorator.decorators import check_permission
 class UserManagementView(View):
     def get(self, request, *args, **kwargs):
         return JsonResponse({"message": "Welcome to user management."})
-
-
 ```
 
 # 🔐 Approval Token Flow
+
 When permission is set to approval_required, the client must provide a valid JWT via header:
 
 ```python
@@ -109,29 +105,23 @@ Example token payload:
   "permissions": ["product.read"],
   "exp": 1713456789
 }
-
 ```
 
 # 🔄 Permission Behavior Summary
 
 ```python
-Permission Type	                Behavior
-allowed	                        Access granted
-approval_required	            Requires valid approval token
-denied	                        Access denied with 403
-Not Found	                    Denied by default (403)
-
+Permission Type                 Behavior
+allowed                         Access granted
+approval_required             Requires valid approval token
+denied                         Access denied with 403
+Not Found                     Denied by default (403)
 ```
-
 
 # 🛠️ TODOs more for the Next version
 
-```
+```python
 - Redis caching support
 - Pluggable permission loader
 - Admin UI for permission inspection
 - Logging and metrics integration
-
 ```
-
-# 📃 License
