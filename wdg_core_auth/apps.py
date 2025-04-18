@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class MyDjangoPackageConfig(AppConfig):
+class WdgCoreAuthConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'my_django_package'
+    name = 'wdg_core_auth'
