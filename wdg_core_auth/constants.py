@@ -17,3 +17,14 @@ PERMISSION_TYPE = [
     (PermissionType.MENU, "Menu"),
     (PermissionType.PERMISSION, "Permission"),
 ]
+
+
+# Permission lists
+class Permission:
+    # User
+    # Role
+    # Menu
+    # Order
+    
+    
+    pass
