@@ -1,0 +1,5 @@
+Django
+django-environ
+djangorestframework
+boto3
+django-storages
