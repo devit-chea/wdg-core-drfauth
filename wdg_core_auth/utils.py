@@ -21,7 +21,7 @@ redis_client = redis.Redis(
     port=port,
     db=db,
     password=password,
-    ssl=True,  # Redis Cloud often requires SSL
+    ssl=False,  # Redis Cloud often requires SSL
 )
 
 
