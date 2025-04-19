@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="wdg-core-auth",
     version="0.2.0",
-    author="Your Name",
+    author="DEVITH CHEA",
     description="Reusable Django decorator for permission-based access control",
     long_description=long_description,
     long_description_content_type="text/markdown",
