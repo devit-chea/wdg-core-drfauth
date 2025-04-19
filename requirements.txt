@@ -3,3 +3,9 @@ django-environ
 djangorestframework
 boto3
 django-storages
+
+
+setuptools
+twine
+sdist
+wheel
