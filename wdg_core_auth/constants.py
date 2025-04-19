@@ -25,6 +25,8 @@ class Permission:
     # Role
     # Menu
     # Order
+    # EQR Code
+    # Customer
     
     
     pass
