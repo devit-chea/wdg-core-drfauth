@@ -69,7 +69,7 @@ class PermissionOption:
 ### Function-Based Views python Copy Edit
 
 ```python
-from permission_decorator.decorators import check_permission
+from wdg_core_auth.decorators import check_permission
 
 @check_permission(required_permissions="product.read")
 def product_view(request):
@@ -82,7 +82,7 @@ def product_view(request):
 ```python
 from django.utils.decorators import method_decorator
 from django.views import View
-from permission_decorator.decorators import check_permission
+from wdg_core_auth.decorators import check_permission
 
 @method_decorator(check_permission(required_permissions="user.manage"), name='dispatch')
 class UserManagementView(View):
@@ -112,16 +112,57 @@ Example token payload:
 ```python
 Permission Type                 Behavior
 allowed                         Access granted
-approval_required             Requires valid approval token
-denied                         Access denied with 403
-Not Found                     Denied by default (403)
+approval_required               Requires valid approval token
+denied                          Access denied with 403
+Not Found                       Denied by default (403)
+```
+---
+
+# 🔐 Action-Based Permission Mixin for Django REST Framework
+
+This package provides also an `ActionPermissionMixin` for Django REST Framework ViewSets that allows you to define **permissions per action** (like `create`, `update`, `list`, or even custom actions like `archive`) using a simple dictionary.
+
+---
+
+## 🚀 Features
+
+- Automatically checks permissions based on the current action
+- Supports permission types: `allowed`, `approval_required`, `denied`
+- Works with DRF's built-in and custom actions (`@action`)
+- Approval token handling for approval-based permissions
+
+---
+
+# ✅ Usage
+
+```bash
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from wdg_core_auth.mixins import ActionPermissionMixin
+
+class ProductViewSet(ActionPermissionMixin, ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+    # 👇 Map actions to permission codenames
+    action_permissions = {
+        'list': 'product_list',
+        'create': 'product_create',
+        'retrieve': 'product_view',
+        'update': 'product_update',
+        'destroy': 'product_delete',
+        'archive': 'product_archive',  # custom action
+    }
+
+    @action(detail=True, methods=['post'])
+    def archive(self, request, pk=None):
+        product = self.get_object()
+        product.is_archived = True
+        product.save()
+        return Response({'status': 'archived'})
 ```
 
-# 🛠️ TODOs more for the Next version
 
-```python
-- Redis caching support
-- Pluggable permission loader
-- Admin UI for permission inspection
-- Logging and metrics integration
-```
+# 🙌 Contributions
+### Feel free to fork and contribute!
