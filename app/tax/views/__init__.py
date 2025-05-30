@@ -1,0 +1,1 @@
+from .tax_view import Tax
